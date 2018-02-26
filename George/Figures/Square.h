@@ -4,7 +4,6 @@
 
 class Square : public Rectangle
 {
-	bool WereDiagonalGiven;
 public:
 	Square(float height);
 	Square(Point bottomLeft, float diagonal);
