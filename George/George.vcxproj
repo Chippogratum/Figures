@@ -142,40 +142,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="Plan.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Circle.h" />
-    <ClInclude Include="Figure.h" />
-    <ClInclude Include="Figures\Circle.h" />
-    <ClInclude Include="Figures\CirclePouch.h" />
-    <ClInclude Include="Figures\CommonPouch.h" />
-    <ClInclude Include="Figures\Figure.h" />
-    <ClInclude Include="Figures\Figure2D.h" />
-    <ClInclude Include="Figures\FigureFactory.h" />
-    <ClInclude Include="Figures\Point.h" />
-    <ClInclude Include="Figures\Rectangle.h" />
-    <ClInclude Include="Figures\RectanglePouch.h" />
-    <ClInclude Include="Figures\Square.h" />
-    <ClInclude Include="Figures\SquarePouch.h" />
-    <ClInclude Include="Rectangle.h" />
-    <ClInclude Include="Square.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Figures\Circle.cpp" />
-    <ClCompile Include="Figures\CirclePouch.cpp" />
-    <ClCompile Include="Figures\CommonPouch.cpp" />
     <ClCompile Include="Figures\Figure.cpp" />
     <ClCompile Include="Figures\Figure2D.cpp" />
-    <ClCompile Include="Figures\FigureFactory.cpp" />
-    <ClCompile Include="Figures\Point.cpp" />
     <ClCompile Include="Figures\Rectangle.cpp" />
-    <ClCompile Include="Figures\RectanglePouch.cpp" />
     <ClCompile Include="Figures\Square.cpp" />
-    <ClCompile Include="Figures\SquarePouch.cpp" />
     <ClCompile Include="George.cpp" />
+    <ClCompile Include="Other\FigureFactory.cpp" />
+    <ClCompile Include="Other\Point.cpp" />
+    <ClCompile Include="Pouches\CirclePouch.cpp" />
+    <ClCompile Include="Pouches\CommonPouch.cpp" />
+    <ClCompile Include="Pouches\PouchSource\ConsolePouchSource.cpp" />
+    <ClCompile Include="Pouches\PouchSource\FilePouchSource.cpp" />
+    <ClCompile Include="Pouches\PouchSource\IPouchSource.cpp" />
+    <ClCompile Include="Pouches\RectanglePouch.cpp" />
+    <ClCompile Include="Pouches\SquarePouch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Figures\Circle.h" />
+    <ClInclude Include="Figures\Figure.h" />
+    <ClInclude Include="Figures\Figure2D.h" />
+    <ClInclude Include="Figures\Rectangle.h" />
+    <ClInclude Include="Figures\Square.h" />
+    <ClInclude Include="Other\FigureFactory.h" />
+    <ClInclude Include="Other\Point.h" />
+    <ClInclude Include="Pouches\CirclePouch.h" />
+    <ClInclude Include="Pouches\CommonPouch.h" />
+    <ClInclude Include="Pouches\PouchSource\ConsolePouchSource.h" />
+    <ClInclude Include="Pouches\PouchSource\FilePouchSource.h" />
+    <ClInclude Include="Pouches\PouchSource\IPouchSource.h" />
+    <ClInclude Include="Pouches\RectanglePouch.h" />
+    <ClInclude Include="Pouches\SquarePouch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

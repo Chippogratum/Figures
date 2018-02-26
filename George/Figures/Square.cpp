@@ -14,6 +14,7 @@ Square::Square(float height) : Rectangle(height, height)
 	Width = Height;
 	Diagonal = sqrt(2)*Height;
 	FigureType = square;
+	WereCoordinatesGiven = false;
 }
 
 Square::Square(Point bottomLeft, float diagonal) : Rectangle(bottomLeft, bottomLeft)
@@ -26,6 +27,7 @@ Square::Square(Point bottomLeft, float diagonal) : Rectangle(bottomLeft, bottomL
 	TopRightCorner.X = BottomLeftCorner.X + Height;
 	TopRightCorner.Y = BottomLeftCorner.Y + Height;
 	FigureType = square;
+	WereCoordinatesGiven = true;
 }
 
 Square::Square(Point bottomLeft, Point topRight) : Rectangle(bottomLeft, topRight)
@@ -33,6 +35,7 @@ Square::Square(Point bottomLeft, Point topRight) : Rectangle(bottomLeft, topRigh
 	Width = Height;
 	Diagonal = sqrt(2)*Height;
 	FigureType = square;
+	WereCoordinatesGiven = true;
 }
 
 float Square::Area()

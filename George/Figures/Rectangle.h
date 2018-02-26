@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Figure2D.h"
-#include "Point.h"
+#include "../Other/Point.h"
 
 class Rectangle : public Figure2D
 {
 protected:
 	Point BottomLeftCorner, TopRightCorner;
 	float Height, Width, Diagonal;
+	bool WereCoordinatesGiven;
 public:
 	Rectangle(float, float);
 	Rectangle(Point, Point);
