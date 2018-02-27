@@ -8,13 +8,6 @@ using namespace std;
 
 const static float pi = 3.14159;
 
-Circle::Circle(float radius) : Figure2D()
-{
-	Center = Point(0,0);
-	Radius = radius;
-	FigureType = circle;
-}
-
 Circle::Circle(Point center, float radius)
 {
 	Center = center;
@@ -38,7 +31,7 @@ string Circle::ToString()
 
 	stringStream << "Figure type: Circle(" << FigureType << ')' << fixed << setprecision(2) << endl << "Radius: " << Radius <<
 		" Area: " << Area() << " Perimeter: " << Perimeter() << endl <<
-		"Center (x/y): " << Center.X << '/' << Center.Y << endl << endl;
+		"Center (x/y): " << Center.X << '/' << Center.Y << endl;
 
 	string copyOfStr = stringStream.str();
 

@@ -18,11 +18,7 @@ public:
 
 	static Figure2D* CreateFigure(CommonPouch);
 	static Rectangle* CreateRectangle(CommonPouch);
-	static Rectangle* CreateRectangleUsingCorners(CommonPouch);
-	static Rectangle* CreateRectangleUsingSides(CommonPouch);
 	static Square* CreateSquareUsingCorners(CommonPouch);
-	static Square* CreateSquareUsingSides(CommonPouch);
 	static Square* CreateSquareUsingDiagonal(CommonPouch);
-	static Circle* CreateCircleWithoutCenter(CommonPouch);
-	static Circle* CreateCircleWithCenter(CommonPouch);
+	static Circle* CreateCircle(CommonPouch);
 };

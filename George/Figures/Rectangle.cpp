@@ -7,15 +7,6 @@
 
 using namespace std;
 
-Rectangle::Rectangle(float height, float width)
-{
-	Height = height;
-	Width = width;
-	Diagonal = sqrt(Height*Height + Width*Width);
-	FigureType = rectangle;
-	WereCoordinatesGiven = false;
-}
-
 Rectangle::Rectangle(Point bottomLeft, Point topRight)
 {
 	BottomLeftCorner.X = bottomLeft.X;
@@ -26,7 +17,6 @@ Rectangle::Rectangle(Point bottomLeft, Point topRight)
 	Width = (TopRightCorner.Y - BottomLeftCorner.Y);
 	Diagonal = sqrt(Height*Height + Width*Width);
 	FigureType = rectangle;
-	WereCoordinatesGiven = true;
 }
 
 float Rectangle::Area()
@@ -41,26 +31,13 @@ float Rectangle::Perimeter()
 
 string Rectangle::ToString()
 {
-	if (WereCoordinatesGiven)
-	{
-		ostringstream stringStream;
-
-		stringStream << "Figure type: Rectangle (" << FigureType << ')' << endl << 
-			"Height: " << fixed << setprecision(2) << Height << " Width: " << Width <<
-			" Diagonal: " << Diagonal << endl << "Area: " << Area() << " Perimeter: " << Perimeter() << endl <<
-			"Bottom left corner (x/y): " << BottomLeftCorner.X << '/' << BottomLeftCorner.Y << endl <<
-			"Top right corner (x/y): " << TopRightCorner.X << '/' << TopRightCorner.Y << endl << endl;
-
-		string copyOfStr = stringStream.str();
-
-		return copyOfStr;
-	}
-
 	ostringstream stringStream;
 
 	stringStream << "Figure type: Rectangle (" << FigureType << ')' << endl <<
 		"Height: " << fixed << setprecision(2) << Height << " Width: " << Width <<
-		" Diagonal: " << Diagonal << endl << "Area: " << Area() << " Perimeter: " << Perimeter() << endl << endl;
+		" Diagonal: " << Diagonal << endl << "Area: " << Area() << " Perimeter: " << Perimeter() << endl <<
+		"Bottom left corner (x/y): " << BottomLeftCorner.X << '/' << BottomLeftCorner.Y << endl <<
+		"Top right corner (x/y): " << TopRightCorner.X << '/' << TopRightCorner.Y << endl;
 
 	string copyOfStr = stringStream.str();
 

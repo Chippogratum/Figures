@@ -8,5 +8,5 @@ public:
 	Point BottomLeft, TopRight, Center;
 	float Height, Width, Radius, Diagonal;
 	FigureTypes FigureType;
-	bool WereCoordinatesGiven;
+	bool IsSquareDiagonalKnown;
 };

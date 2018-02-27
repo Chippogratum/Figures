@@ -8,9 +8,7 @@ class Rectangle : public Figure2D
 protected:
 	Point BottomLeftCorner, TopRightCorner;
 	float Height, Width, Diagonal;
-	bool WereCoordinatesGiven;
 public:
-	Rectangle(float, float);
 	Rectangle(Point, Point);
 	float Area() override;
 	float Perimeter() override;
