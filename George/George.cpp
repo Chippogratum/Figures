@@ -17,20 +17,22 @@ void DataOutput(Figure2D*);
 
 int main()
 {
-	try
-	{
-		ConsolePouchSource interface;
-		//FilePouchSource interface;
+	
 
 		for (int count = 0; count < 3; count++)
 		{
+			ConsolePouchSource interface;
+			//FilePouchSource interface;
+			try
+			{
 			DataOutput(FigureFactory::CreateFigure(interface.GetPouch()));
+			}
+			catch (exception error)
+			{
+				cout << error.what() << endl;
+			}
 		}
-	}
-	catch (exception error)
-	{
-		cout << error.what() << endl;
-	}
+	
 	
 	
     return 0;
