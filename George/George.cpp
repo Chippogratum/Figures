@@ -13,19 +13,21 @@
 
 using namespace std;
 
+void SavePouchToFile(CommonPouch);
 void DataOutput(Figure2D*);
 
 int main()
 {
-	//IPouchSource interface; // как задействовать полиморфизм для выбора нужного интерфейса? ДОЛЖЕН ПРИНИМАТЬСЯ
-	FilePouchSource fileInterface;
-	ConsolePouchSource consoleInterface;
-	CommonPouch pouch;
-	Figure2D* figure;
-	// УБРАТЬ ЛИШНЕЕ ПОЛУЧЕНИЕ МЕШОЧКА ИЗ КОНСОЛИ
-	FilePouchSource::SavePouchToFile(consoleInterface.GetPouch()); // запись мешочка в файл
-	pouch = fileInterface.GetPouch();
-	figure = FigureFactory::CreateFigure(pouch);
+	//IPouchSource* interface; // как задействовать полиморфизм для выбора нужного интерфейса? ДОЛЖЕН ПРИНИМАТЬСЯ?
+	
+	ConsolePouchSource interface;
+	//ConsolePouchSource consoleInterface; // перемеиновать
+	CommonPouch pouch; // создание мешочка 
+	Figure2D* figure; // создание фигуры 
+
+	pouch = interface.GetPouch(); // получение мешочка из файла (ИНТЕРФЕЙС)
+	SavePouchToFile(pouch); // запись мешочка в файл
+	figure = FigureFactory::CreateFigure(pouch); // определение фигуры 
 	DataOutput(figure); // вывод инфо фигуры созданной с мешочка из файла
 
 	//for (int count = 0; count < 3; count++)
@@ -48,4 +50,16 @@ int main()
 void DataOutput(Figure2D* figure)
 {
 	cout << figure->ToString() << endl;
+}
+
+void SavePouchToFile(CommonPouch pouch) // отправка мешочка в файл
+{
+	//cout << "Enter the name of the source file: "; // определение имени файла-источника с консоли
+	//cin >> fileNameOut; //
+	ofstream file;
+	string fileName = "Pouch.txt"; // имя файла, на который записывается мешочек
+
+	file.open(fileName, std::ofstream::out); // содержимое файла будет перезаписано
+	file.write((char*)&pouch, sizeof(CommonPouch)); // запись информации размером с мешочек из полученного мешочка в файл
+	file.close(); // закрытие файла
 }
