@@ -6,7 +6,7 @@
 #include "FigureFactory.h"
 
 
-Figure2D * FigureFactory::CreateFigure(CommonPouch pouch)
+Figure2D* FigureFactory::CreateFigure(CommonPouch pouch)
 {
 	switch (pouch.FigureType)
 	{

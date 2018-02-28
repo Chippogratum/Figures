@@ -6,4 +6,5 @@ class FilePouchSource : public IPouchSource
 {
 public:
 	CommonPouch GetPouch() override;
+	static void SavePouchToFile(CommonPouch);
 };

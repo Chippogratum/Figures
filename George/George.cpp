@@ -17,24 +17,31 @@ void DataOutput(Figure2D*);
 
 int main()
 {
-	
+	//IPouchSource interface; // как задействовать полиморфизм для выбора нужного интерфейса? ДОЛЖЕН ПРИНИМАТЬСЯ
+	FilePouchSource fileInterface;
+	ConsolePouchSource consoleInterface;
+	CommonPouch pouch;
+	Figure2D* figure;
+	// УБРАТЬ ЛИШНЕЕ ПОЛУЧЕНИЕ МЕШОЧКА ИЗ КОНСОЛИ
+	FilePouchSource::SavePouchToFile(consoleInterface.GetPouch()); // запись мешочка в файл
+	pouch = fileInterface.GetPouch();
+	figure = FigureFactory::CreateFigure(pouch);
+	DataOutput(figure); // вывод инфо фигуры созданной с мешочка из файла
 
-		for (int count = 0; count < 3; count++)
-		{
-			ConsolePouchSource interface;
-			//FilePouchSource interface;
-			try
-			{
-			DataOutput(FigureFactory::CreateFigure(interface.GetPouch()));
-			}
-			catch (exception error)
-			{
-				cout << error.what() << endl;
-			}
-		}
-	
-	
-	
+	//for (int count = 0; count < 3; count++)
+	//{
+	//	ConsolePouchSource interface;
+	//	//FilePouchSource interface;
+	//	try
+	//	{
+	//		DataOutput(FigureFactory::CreateFigure(interface.GetPouch()));
+	//	}
+	//	catch (exception error)
+	//	{
+	//		cout << error.what() << endl << endl;
+	//	}
+	//}
+		
     return 0;
 }
 
@@ -42,38 +49,3 @@ void DataOutput(Figure2D* figure)
 {
 	cout << figure->ToString() << endl;
 }
-
-
-//for (int i = 0; i < 2; i++)
-//{
-//	try
-//	{
-//		cout << FigureFactory::CreateRectangle(ConsolePouchSource::GetPouch())->ToString(); // создать любую фигуру, а не прямоугольник
-//	}
-//	catch (exception error)
-//	{
-//		cout << error.what();
-//	}
-//}
-
-//// 1 прямоугольник по углам
-//Rectangle recPoint(Point(0, 0), Point(4, 3));
-//cout << recPoint.ToString();
-//// 2 прямоугольник по сторонам
-//Rectangle recCorner(3.5, 4.5);
-//cout << recCorner.ToString();
-//// 3 квадрат по стороне
-//Square squSide(3.5);
-//cout << squSide.ToString();
-//// 4 квадрат по диагонале
-//Square squDiagonal(Point(0, 0), 8.5);
-//cout << squDiagonal.ToString();
-//// 5 квадрат по углам
-//Square squPoint(Point(0, 0), Point(5, 5));
-//cout << squPoint.ToString();
-//// 6 круг
-//Circle cir(7);
-//cout << cir.ToString();
-//// 7 круг с центром
-//Circle cirCenter(Point(60, 70), 17.5);
-//cout << cirCenter.ToString();

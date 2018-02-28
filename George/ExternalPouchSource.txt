@@ -1,4 +1,0 @@
-CommonPouch Pouch;
-Pouch.FigyreType = circle;
-Pouch.Center = Point(22, 33);
-Pouch.Radius = 44;
