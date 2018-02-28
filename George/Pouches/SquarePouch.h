@@ -1,7 +1,5 @@
 #pragma once
-
-#include "Point.h"
-#include "Figure.h"
+#include "../Other/Point.h"
 
 class SquarePouch
 {

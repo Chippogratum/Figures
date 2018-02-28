@@ -14,63 +14,69 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files\Figures">
-      <UniqueIdentifier>{c99e7716-4022-4219-9000-e6b0cbb7cc20}</UniqueIdentifier>
+      <UniqueIdentifier>{0d77450e-b73e-4540-822c-5fa3805126ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Other">
+      <UniqueIdentifier>{48bda6e1-2274-4698-9315-9d71a494a243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pouches">
+      <UniqueIdentifier>{78ab120e-daf4-458e-a518-e73a54f8d922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pouches\PouchSource">
+      <UniqueIdentifier>{ecd33a8e-1437-4b4f-8049-fb0503184b05}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="Plan.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="Pouch.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Figure.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Square.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Circle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Figures\Circle.h">
-      <Filter>Source Files\Figures</Filter>
-    </ClInclude>
-    <ClInclude Include="Figures\CirclePouch.h">
-      <Filter>Source Files\Figures</Filter>
-    </ClInclude>
-    <ClInclude Include="Figures\CommonPouch.h">
-      <Filter>Source Files\Figures</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figures\Figure.h">
-      <Filter>Source Files\Figures</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figures\Figure2D.h">
-      <Filter>Source Files\Figures</Filter>
-    </ClInclude>
-    <ClInclude Include="Figures\Point.h">
-      <Filter>Source Files\Figures</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figures\Rectangle.h">
-      <Filter>Source Files\Figures</Filter>
-    </ClInclude>
-    <ClInclude Include="Figures\RectanglePouch.h">
-      <Filter>Source Files\Figures</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figures\Square.h">
-      <Filter>Source Files\Figures</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\SquarePouch.h">
-      <Filter>Source Files\Figures</Filter>
+    <ClInclude Include="Pouches\PouchSource\ConsolePouchSource.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Figures\FigureFactory.h">
-      <Filter>Source Files\Figures</Filter>
+    <ClInclude Include="Pouches\PouchSource\FilePouchSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pouches\PouchSource\IPouchSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pouches\CirclePouch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pouches\CommonPouch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pouches\RectanglePouch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pouches\SquarePouch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Other\FigureFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Other\Point.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -80,35 +86,44 @@
     <ClCompile Include="Figures\Circle.cpp">
       <Filter>Source Files\Figures</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\CirclePouch.cpp">
-      <Filter>Source Files\Figures</Filter>
-    </ClCompile>
-    <ClCompile Include="Figures\CommonPouch.cpp">
-      <Filter>Source Files\Figures</Filter>
-    </ClCompile>
     <ClCompile Include="Figures\Figure.cpp">
       <Filter>Source Files\Figures</Filter>
     </ClCompile>
     <ClCompile Include="Figures\Figure2D.cpp">
       <Filter>Source Files\Figures</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\Point.cpp">
-      <Filter>Source Files\Figures</Filter>
-    </ClCompile>
     <ClCompile Include="Figures\Rectangle.cpp">
-      <Filter>Source Files\Figures</Filter>
-    </ClCompile>
-    <ClCompile Include="Figures\RectanglePouch.cpp">
       <Filter>Source Files\Figures</Filter>
     </ClCompile>
     <ClCompile Include="Figures\Square.cpp">
       <Filter>Source Files\Figures</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\SquarePouch.cpp">
-      <Filter>Source Files\Figures</Filter>
+    <ClCompile Include="Pouches\CirclePouch.cpp">
+      <Filter>Source Files\Pouches</Filter>
     </ClCompile>
-    <ClCompile Include="Figures\FigureFactory.cpp">
-      <Filter>Source Files\Figures</Filter>
+    <ClCompile Include="Pouches\CommonPouch.cpp">
+      <Filter>Source Files\Pouches</Filter>
+    </ClCompile>
+    <ClCompile Include="Pouches\RectanglePouch.cpp">
+      <Filter>Source Files\Pouches</Filter>
+    </ClCompile>
+    <ClCompile Include="Pouches\SquarePouch.cpp">
+      <Filter>Source Files\Pouches</Filter>
+    </ClCompile>
+    <ClCompile Include="Pouches\PouchSource\FilePouchSource.cpp">
+      <Filter>Source Files\Pouches\PouchSource</Filter>
+    </ClCompile>
+    <ClCompile Include="Pouches\PouchSource\ConsolePouchSource.cpp">
+      <Filter>Source Files\Pouches\PouchSource</Filter>
+    </ClCompile>
+    <ClCompile Include="Pouches\PouchSource\IPouchSource.cpp">
+      <Filter>Source Files\Pouches\PouchSource</Filter>
+    </ClCompile>
+    <ClCompile Include="Other\FigureFactory.cpp">
+      <Filter>Source Files\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Other\Point.cpp">
+      <Filter>Source Files\Other</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

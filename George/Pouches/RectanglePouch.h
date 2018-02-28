@@ -1,8 +1,5 @@
 #pragma once
 
-#include "Point.h"
-#include "Figure.h"
-
 class RectanglePouch
 {
 public:

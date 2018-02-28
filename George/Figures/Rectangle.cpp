@@ -1,4 +1,5 @@
 #include "Rectangle.h"
+#include "../Other/Point.h"
 #include <cmath>
 #include <iostream>
 #include <string>

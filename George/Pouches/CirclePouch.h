@@ -1,7 +1,6 @@
 #pragma once
-
-#include "Point.h"
-#include "Figure.h"
+#include "../Other/Point.h"
+#include "../Figures/Figure.h"
 
 class CirclePouch
 {

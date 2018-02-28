@@ -1,7 +1,6 @@
 #pragma once
-
+#include "../Other/Point.h"
 #include "Figure2D.h"
-#include "Point.h"
 
 class Rectangle : public Figure2D
 {
