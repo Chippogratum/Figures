@@ -14,8 +14,50 @@
 using namespace std;
 
 void SavePouchToFile(CommonPouch);
-void DataOutput(Figure2D*);
+void FDataOutput(Figure2D*);
 IPouchSource* GetPouchSource();
+
+
+
+class IFigureDataOutput
+{
+public:
+	virtual void DataOutput(Figure2D*) abstract;
+};
+
+class ConsoleFigureDataOutput : public IFigureDataOutput
+{
+public:
+	void DataOutput(Figure2D*) override;
+};
+
+class FileFigureDataOutput : public IFigureDataOutput
+{
+public:
+	void DataOutput(Figure2D*) override;
+};
+
+void ConsoleFigureDataOutput::DataOutput(Figure2D* figure)
+{
+	cout << figure->ToString() << endl;
+}
+
+void FileFigureDataOutput::DataOutput(Figure2D* figure)
+{
+	string fileName;
+	cout << "Enter the filename for the data of the pouch: "; // определение имени файла-получателя
+	cin >> fileName;
+	cout << endl;
+
+	string data = figure->ToString(); // создание строки с информацией
+
+	ofstream file;
+	file.open(fileName, std::ofstream::app); // содержимое файла будет дополнено
+	file.write((char*)&data, sizeof(data)); // запись информации в файл
+	file.close(); // закрытие файла
+}
+
+
 
 int main()
 {
@@ -26,7 +68,8 @@ int main()
 			IPouchSource* PouchSourse = GetPouchSource(); // 1) установка источника мешочка
 			CommonPouch pouch = PouchSourse->GetPouch(); // 2) получение мешочка из источника
 			Figure2D* figure = FigureFactory::CreateFigure(pouch); // 3) создание фигуры из мешочка
-			DataOutput(figure); // 4) вывод информации о фигуре
+			FileFigureDataOutput FFDO;
+			FFDO.DataOutput(figure); // 4) вывод информации о фигуре
 		}
 		catch (exception error)
 		{
@@ -37,7 +80,7 @@ int main()
     return 0;
 }
 
-void DataOutput(Figure2D* figure)
+void FDataOutput(Figure2D* figure)
 {
 	cout << figure->ToString() << endl;
 }
@@ -67,3 +110,8 @@ void SavePouchToFile(CommonPouch pouch) // отправка мешочка в ф
 	file.write((char*)&pouch, sizeof(CommonPouch)); // запись мешочка в файл
 	file.close(); // закрытие файла
 }
+
+
+
+
+

@@ -16,7 +16,7 @@ Figure2D* FigureFactory::CreateFigure(CommonPouch pouch)
 		}
 	case square:
 		{
-			if(pouch.IsSquareDiagonalKnown)
+			if(pouch.Diagonal != 0)
 				return new Square(Point(pouch.BottomLeft.X, pouch.BottomLeft.Y), pouch.Diagonal);
 			return new Square(Point(pouch.BottomLeft.X, pouch.BottomLeft.Y), Point(pouch.TopRight.X, pouch.TopRight.Y));
 		}

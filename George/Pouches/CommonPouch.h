@@ -5,8 +5,8 @@
 class CommonPouch
 {
 public:
+	CommonPouch();
 	Point BottomLeft, TopRight, Center;
 	float Height, Width, Radius, Diagonal;
 	FigureTypes FigureType;
-	bool IsSquareDiagonalKnown;
 };
