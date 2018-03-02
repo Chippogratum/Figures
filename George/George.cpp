@@ -17,6 +17,21 @@ IFigureDataOutput* GetRecipientDataOutput();
 
 int main()
 {
+
+	IPouchSource* PouchSourse = GetPouchSource(); // 1) установка источника мешочка
+	if (PouchSourse == nullptr) throw exception("Invalid source of a pouch!"); // 1.1) проверка указанного источника
+	CommonPouch pouch = PouchSourse->GetPouch(); // 2) получение мешочка из источника
+	if (pouch.FigureType == undefinedFigure) throw exception("PouchError"); // 2.1) проверка мешочка
+	SavePouchToFile(pouch);
+	Figure2D* figure = FigureFactory::CreateFigure(pouch); // 3) создание фигуры из мешочка
+	IFigureDataOutput* RecipientData = GetRecipientDataOutput(); // 3.1) установка получателя информации о фигуре
+	RecipientData->FigureDataOutput(figure); // 4) вывод информации о фигуре получателю
+
+
+
+
+
+
 	for (int count = 0; count < 10; count++)
 	{
 		try
