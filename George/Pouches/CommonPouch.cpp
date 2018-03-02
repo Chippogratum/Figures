@@ -1,4 +1,7 @@
 #include "CommonPouch.h"
+#include <string>
+
+using namespace std;
 
 CommonPouch::CommonPouch()
 {

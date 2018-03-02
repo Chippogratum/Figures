@@ -1,6 +1,9 @@
 #pragma once
+#include <string>
 #include "../Other/Point.h"
 #include "../Figures/Figure.h"
+
+using namespace std;
 
 class CommonPouch
 {

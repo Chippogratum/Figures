@@ -152,7 +152,10 @@
     <ClInclude Include="Figures\Figure2D.h" />
     <ClInclude Include="Figures\Rectangle.h" />
     <ClInclude Include="Figures\Square.h" />
+    <ClInclude Include="Other\ConsoleFigureDataOutput.h" />
     <ClInclude Include="Other\FigureFactory.h" />
+    <ClInclude Include="Other\FileFigureDataOutput.h" />
+    <ClInclude Include="Other\IFigureDataOutput.h" />
     <ClInclude Include="Other\Point.h" />
     <ClInclude Include="Pouches\CirclePouch.h" />
     <ClInclude Include="Pouches\CommonPouch.h" />
@@ -169,7 +172,10 @@
     <ClCompile Include="Figures\Rectangle.cpp" />
     <ClCompile Include="Figures\Square.cpp" />
     <ClCompile Include="George.cpp" />
+    <ClCompile Include="Other\ConsoleFigureDataOutput.cpp" />
     <ClCompile Include="Other\FigureFactory.cpp" />
+    <ClCompile Include="Other\FileFigureDataOutput.cpp" />
+    <ClCompile Include="Other\IFigureDataOutput.cpp" />
     <ClCompile Include="Other\Point.cpp" />
     <ClCompile Include="Pouches\CirclePouch.cpp" />
     <ClCompile Include="Pouches\CommonPouch.cpp" />

@@ -9,7 +9,7 @@ protected:
 	float Height, Width, Diagonal;
 public:
 	Rectangle(Point, Point);
-	float Area() override;
-	float Perimeter() override;
+	double Area() override;
+	double Perimeter() override;
 	string ToString() override;
 };

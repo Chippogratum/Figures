@@ -6,7 +6,7 @@
 #include <iomanip>
 using namespace std;
 
-const static float pi = 3.14159;
+const static double pi = 3.14159;
 
 Circle::Circle(Point center, float radius)
 {
@@ -15,12 +15,12 @@ Circle::Circle(Point center, float radius)
 	FigureType = circle;
 }
 
-float Circle::Area()
+double Circle::Area()
 {
 	return pi*(Radius*Radius);
 }
 
-float Circle::Perimeter()
+double Circle::Perimeter()
 {
 	return 2*pi*Radius;
 }

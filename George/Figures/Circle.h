@@ -9,7 +9,7 @@ protected:
 	float Radius;
 public:
 	Circle(Point, float);
-	float Area() override;
-	float Perimeter() override;
+	double Area() override;
+	double Perimeter() override;
 	string ToString() override;
 };

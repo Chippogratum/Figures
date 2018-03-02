@@ -20,12 +20,12 @@ Rectangle::Rectangle(Point bottomLeft, Point topRight)
 	FigureType = rectangle;
 }
 
-float Rectangle::Area()
+double Rectangle::Area()
 {
 	return Height * Width;
 }
 
-float Rectangle::Perimeter()
+double Rectangle::Perimeter()
 {
 	return Height * 2 + Width * 2;
 }

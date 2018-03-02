@@ -8,8 +8,8 @@ using std::string;
 class Figure2D
 {
 public:
-	virtual float Area() abstract;
-	virtual float Perimeter() abstract;
+	virtual double Area() abstract;
+	virtual double Perimeter() abstract;
 	virtual string ToString() abstract;
 	FigureTypes FigureType;
 };

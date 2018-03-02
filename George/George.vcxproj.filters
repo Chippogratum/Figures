@@ -78,6 +78,15 @@
     <ClInclude Include="Other\Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Other\ConsoleFigureDataOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Other\FileFigureDataOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Other\IFigureDataOutput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="George.cpp">
@@ -123,6 +132,15 @@
       <Filter>Source Files\Other</Filter>
     </ClCompile>
     <ClCompile Include="Other\Point.cpp">
+      <Filter>Source Files\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Other\ConsoleFigureDataOutput.cpp">
+      <Filter>Source Files\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Other\FileFigureDataOutput.cpp">
+      <Filter>Source Files\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Other\IFigureDataOutput.cpp">
       <Filter>Source Files\Other</Filter>
     </ClCompile>
   </ItemGroup>

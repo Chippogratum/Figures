@@ -26,12 +26,12 @@ Square::Square(Point bottomLeft, Point topRight) : Rectangle(bottomLeft, topRigh
 	FigureType = square;
 }
 
-float Square::Area()
+double Square::Area()
 {
 	return Height*Height;
 }
 
-float Square::Perimeter()
+double Square::Perimeter()
 {
 	return Height * 4;
 }

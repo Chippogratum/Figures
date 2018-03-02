@@ -7,7 +7,7 @@ class Square : public Rectangle
 public:
 	Square(Point, Point);
 	Square(Point, float);
-	float Area() override;
-	float Perimeter() override;
+	double Area() override;
+	double Perimeter() override;
 	string ToString() override;
 };
