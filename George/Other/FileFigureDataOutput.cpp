@@ -9,7 +9,7 @@ using namespace std;
 void FileFigureDataOutput::FigureDataOutput(Figure2D* figure)
 {
 	string fileName;
-	cout << "Enter the filename for the data record of the pouch: "; // определение имени файла-получателя
+	cout << "Enter the filename for the data record of the figure: "; // определение имени файла-получателя
 	cin >> fileName;
 	cout << endl;
 
@@ -17,8 +17,6 @@ void FileFigureDataOutput::FigureDataOutput(Figure2D* figure)
 	
 	ofstream file(fileName, ofstream::out);
 	file << data;
-	//file.open(fileName, std::ofstream::app); // содержимое файла будет дополнено
-	//file.write((char*)&data, sizeof(data)); // запись информации в файл
 	file.close(); // закрытие файла
 }
 // ЗАПИСАТЬ СТРОКУ В МАССИВ СИМВОЛОВ И ЗАПИСАТЬ КАЖДЫЙ БАЙТ В ФАЙЛ ?!
