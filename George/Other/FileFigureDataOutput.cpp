@@ -14,9 +14,7 @@ void FileFigureDataOutput::FigureDataOutput(Figure2D* figure)
 	cout << endl;
 
 	string data = figure->ToString(); // создание строки с информацией
-	
 	ofstream file(fileName, ofstream::out);
 	file << data;
 	file.close(); // закрытие файла
 }
-// ЗАПИСАТЬ СТРОКУ В МАССИВ СИМВОЛОВ И ЗАПИСАТЬ КАЖДЫЙ БАЙТ В ФАЙЛ ?!
