@@ -1,4 +1,4 @@
-#include "Square.h"
+﻿#include "Square.h"
 #include <cmath>
 #include <iostream>
 #include <sstream>
@@ -22,7 +22,7 @@ Square::Square(Point bottomLeft, float diagonal) : Rectangle(bottomLeft, bottomL
 Square::Square(Point bottomLeft, Point topRight) : Rectangle(bottomLeft, topRight)
 {
 	Width = Height;
-	Diagonal = sqrt(2)*Height;
+	Diagonal = static_cast<float>(sqrt(2)*Height); // минус warning: для Diagonal присваивается значение её типа (float), а не иного (double)
 	FigureType = square;
 }
 
