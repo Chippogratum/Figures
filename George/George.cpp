@@ -1,17 +1,9 @@
-﻿#include <iostream>
+﻿#include "Header.h"
+#include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <vector>
 #include <iterator>
-#include "Figures/Figure2D.h"
-#include "Other/FigureFactory.h"
-#include "Pouches/PouchSource/IPouchSource.h"
-#include "Pouches/PouchSource/ConsolePouchSource.h"
-#include "Pouches/PouchSource/FilePouchSource.h"
-#include "Other/IFigureDataOutput.h"
-#include "Other/ConsoleFigureDataOutput.h"
-#include "Other/FileFigureDataOutput.h"
-#include "Windows.h"
 
 using namespace std;
 
@@ -20,10 +12,13 @@ IFigureDataOutput* GetRecipientDataOutput();
 
 int main()
 {
+
+
+
+
 	//vector <int> v1 = {45, 79, 28, 95, 84, 51, 62, 17, 8, 39};
 	//auto t1 = v1.begin();
 	//auto t2 = v1.end();
-
 	//while(t1 != t2)
 	//{
 	//	if (t1 != t2 - 1)
@@ -32,57 +27,51 @@ int main()
 	//		cout << *t1 << "." << endl;
 	//	t1++;
 	//}
-
 	//t1 = v1.begin() + 4;
 	//cout << "t1 = " << *t1 << endl;
 	//t2 -= 1;
 	//cout << "t2 = " << *t2 << endl;
-
 	//
 	//while (t1 != t2)
 	//{
 	//	cout << *t1 << " != " << *t2 << endl;
 	//	t2--;
 	//}
-
 	//if(t1==t2)
 	//	cout << *t1 << " == " << *t2 << endl;
 
 
+	IPouchSource* PouchSourse = GetPouchSource(); // 1) установка источника мешочка
+	if (PouchSourse == nullptr) throw exception("Invalid source of a pouch!"); // 1.1) проверка указанного источника
+	CommonPouch pouch = PouchSourse->GetPouch(); // 2) получение мешочка из источника
+	if (pouch.FigureType == undefinedFigure) throw exception("PouchError"); // 2.1) проверка мешочка
+	SavePouchToFile(pouch);
+	Figure2D* figure = FigureFactory::CreateFigure(pouch); // 3) создание фигуры из мешочка
+	IFigureDataOutput* RecipientData = GetRecipientDataOutput(); // 3.1) установка получателя информации о фигуре
+	RecipientData->FigureDataOutput(figure); // 4) вывод информации о фигуре получателю
 
-
-
-	//IPouchSource* PouchSourse = GetPouchSource(); // 1) установка источника мешочка
-	//if (PouchSourse == nullptr) throw exception("Invalid source of a pouch!"); // 1.1) проверка указанного источника
-	//CommonPouch pouch = PouchSourse->GetPouch(); // 2) получение мешочка из источника
-	//if (pouch.FigureType == undefinedFigure) throw exception("PouchError"); // 2.1) проверка мешочка
-	//SavePouchToFile(pouch);
-	//Figure2D* figure = FigureFactory::CreateFigure(pouch); // 3) создание фигуры из мешочка
-	//IFigureDataOutput* RecipientData = GetRecipientDataOutput(); // 3.1) установка получателя информации о фигуре
-	//RecipientData->FigureDataOutput(figure); // 4) вывод информации о фигуре получателю
-
-	//for (int count = 0; count < 10; count++)
-	//{
-	//	try
-	//	{
-	//		IPouchSource* PouchSourse = GetPouchSource(); // 1) установка источника мешочка
-	//		if(PouchSourse == nullptr) throw exception("Invalid source of a pouch!"); // 1.1) проверка указанного источника
-	//		CommonPouch pouch = PouchSourse->GetPouch(); // 2) получение мешочка из источника
-	//		if(pouch.FigureType == undefinedFigure) throw exception("PouchError"); // 2.1) проверка мешочка
-	//		Figure2D* figure = FigureFactory::CreateFigure(pouch); // 3) создание фигуры из мешочка
-	//		IFigureDataOutput* RecipientData = GetRecipientDataOutput(); // 3.1) установка получателя информации о фигуре
-	//		RecipientData->FigureDataOutput(figure); // 4) вывод информации о фигуре получателю
-	//	}
-	//	catch (exception error)
-	//	{
-	//		if (error.what() == "PouchError")
-	//		{
-	//			
-	//			continue;
-	//		}
-	//		cout << error.what() << endl << endl;
-	//	}
-	//}
+	for (int count = 0; count < 10; count++)
+	{
+		try
+		{
+			IPouchSource* PouchSourse = GetPouchSource(); // 1) установка источника мешочка
+			if(PouchSourse == nullptr) throw exception("Invalid source of a pouch!"); // 1.1) проверка указанного источника
+			CommonPouch pouch = PouchSourse->GetPouch(); // 2) получение мешочка из источника
+			if(pouch.FigureType == undefinedFigure) throw exception("PouchError"); // 2.1) проверка мешочка
+			Figure2D* figure = FigureFactory::CreateFigure(pouch); // 3) создание фигуры из мешочка
+			IFigureDataOutput* RecipientData = GetRecipientDataOutput(); // 3.1) установка получателя информации о фигуре
+			RecipientData->FigureDataOutput(figure); // 4) вывод информации о фигуре получателю
+		}
+		catch (exception error)
+		{
+			if (error.what() == "PouchError")
+			{
+				
+				continue;
+			}
+			cout << error.what() << endl << endl;
+		}
+	}
 
 	// luck = 16938
 	//double luck;

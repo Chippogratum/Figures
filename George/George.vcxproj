@@ -152,6 +152,7 @@
     <ClInclude Include="Figures\Figure2D.h" />
     <ClInclude Include="Figures\Rectangle.h" />
     <ClInclude Include="Figures\Square.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Other\ConsoleFigureDataOutput.h" />
     <ClInclude Include="Other\FigureFactory.h" />
     <ClInclude Include="Other\FileFigureDataOutput.h" />
